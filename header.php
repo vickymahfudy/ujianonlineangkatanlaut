@@ -310,7 +310,7 @@
                         <div class="sidebar-content">
                             <!-- Brand -->
                             <div class="sidebar-brand">
-                                <span class="sidebar-nav-mini-hide">ITS</span>
+                                <span class="sidebar-nav-mini-hide">Akademi AL</span>
                             </div>
                             <!-- END Brand -->
 

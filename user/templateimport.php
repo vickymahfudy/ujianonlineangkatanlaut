@@ -7,6 +7,7 @@ header('Content-Disposition: attachment; filename=Template Upload User.xls');
 <table border="1">
 <thead>
     <tr>
+        <th class="text-center">No.</th>
         <th class="text-center">Nama User</th>
         <th class="text-center">Jenis Kelamin (L/P)</th>
         <th class="text-center">Tempat Lahir</th>

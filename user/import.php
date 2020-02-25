@@ -23,20 +23,18 @@ $jumlah_baris = $data->rowcount($sheet_index=0);
 
 // jumlah default data yang berhasil di import
 $berhasil = 0;
-var_dump($berhasil);
 for ($i=2; $i<=$jumlah_baris; $i++){
 
 	// menangkap data dan memasukkan ke variabel sesuai dengan kolumnya masing-masing
-	$namauser       = $data->val($i, 1);
-    $jk             = $data->val($i, 2);
-    $tempatlahir    = $data->val($i, 3);
-    $tanggal         = $data->val($i, 4);
+	$namauser       = $data->val($i, 2);
+    $jk             = $data->val($i, 3);
+    $tempatlahir    = $data->val($i, 4);
+    $tanggal         = $data->val($i, 5);
     $tgllahir        = date('Y-m-d', strtotime($tanggal));
-    $status         = $data->val($i, 5);
-    $username       = $data->val($i, 6);
-    $pass           = $data->val($i, 7);
-    $password       = base64_encode($pass); 
-    var_dump($namauser,$jk,$tempatlahir,$tanggal,$tgllahir,$status,$username,$pass,$password);
+    $status         = $data->val($i, 6);
+    $username       = $data->val($i, 7);
+    $pass           = $data->val($i, 8);
+    $password       = base64_encode($pass);
     
     if($jk=='L'||'l') $jk = 'laki-laki';
     else if($jk=='P'||'p') $jk = 'perempuan';

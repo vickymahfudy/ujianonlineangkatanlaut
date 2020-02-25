@@ -26,27 +26,27 @@ $berhasil = 0;
 if($jenissoal == 'singlechoice'){
     for ($i=2; $i<=$jumlah_baris; $i++){
         // menangkap data dan memasukkan ke variabel sesuai dengan kolumnya masing-masing
-        $soal        = $data->val($i, 1);
-        $pilihana    = $data->val($i, 2);
-        $pilihanb    = $data->val($i, 3);
-        $pilihanc    = $data->val($i, 4);
-        $pilihand    = $data->val($i, 5);
-        $pilihane    = $data->val($i, 6);
-        $pilihanbenar= $data->val($i, 7);
-        $pembahasan  = $data->val($i, 8);
+        $soal        = $data->val($i, 2);
+        $pilihana    = $data->val($i, 3);
+        $pilihanb    = $data->val($i, 4);
+        $pilihanc    = $data->val($i, 5);
+        $pilihand    = $data->val($i, 6);
+        $pilihane    = $data->val($i, 7);
+        $pilihanbenar= strtolower($data->val($i, 8));
+        $pembahasan  = $data->val($i, 9);
 
         // input data ke database (table data_pegawai)
         mysqli_query($mysqli,"insert into soal set 
         idgroup = '$idgroup', 
-        soal = '$soal',
+        soal = '<p>$soal<p>',
         jenissoal = '$jenissoal',
-        pilihana = '$pilihana',
-        pilihanb = '$pilihanb',
-        pilihanc = '$pilihanc',
-        pilihand = '$pilihand',
-        pilihane = '$pilihane',
+        pilihana = '<p>$pilihana<p>',
+        pilihanb = '<p>$pilihanb<p>',
+        pilihanc = '<p>$pilihanc<p>',
+        pilihand = '<p>$pilihand<p>',
+        pilihane = '<p>$pilihane<p>',
         pilihanbenar = '$pilihanbenar',
-        pembahasan = '$pembahasan'
+        pembahasan = '<p>$pembahasan<p>'
         ");
     }
 }elseif($jenissoal == 'truefalse'){

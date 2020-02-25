@@ -29,6 +29,7 @@ if($_SESSION['status']=='admin'){
                             <div class="modal-body">
                                 <form action="detailsoal/import.php" method="post" enctype="multipart/form-data" class="form-horizontal form-bordered">
                                 <input type="hidden" value="<?php echo $idgroup; ?>" name="idgroup">
+                                <input type="hidden" value="singlechoice" name="jenissoal">
                                 <div class="form-group">
                                     <label class="col-md-3 control-label" for="example-hf-email">Import Soal</label>
                                     <div class="col-md-9">
@@ -37,6 +38,7 @@ if($_SESSION['status']=='admin'){
                                 </div>
                                 <div class="form-group form-actions">
                                     <div class="col-md-9 col-md-offset-3">
+                                        <button type="reset" onclick="window.location.href = 'detailsoal/templateimport.php'" class="btn btn-sm btn-success">Download Template Excel</button>
                                         <button type="submit" name="upload" value="import" class="btn btn-sm btn-primary">Import Data</button>
                                     </div>
                                 </div>
@@ -57,8 +59,13 @@ if($_SESSION['status']=='admin'){
                         <tr>
                             <th class="text-center">No</th>
                             <th class="">Soal</th>
-                            <th width="300" class="">Pembahasan</th>
+                            <th class="text-center">Pilihan A</th>
+                            <th class="text-center">Pilihan B</th>
+                            <th class="text-center">Pilihan C</th>
+                            <th class="text-center">Pilihan D</th>
+                            <th class="text-center">Pilihan E</th>
                             <th width="150" class="text-center">Jawaban Benar</th>
+                            <th width="300" class="">Pembahasan</th>
                             <th class="text-center">Action</th>
                         </tr>
                     </thead>
@@ -71,8 +78,13 @@ if($_SESSION['status']=='admin'){
                             <tr>
                                 <td class="text-center"><?php echo $no++; ?></td>
                                 <td class=""><?php echo $hasil['soal']; ?></td>
-                                <td width="300" class=""><?php if($hasil['pembahasan']==''){echo "Tidak ada pembahasan untuk soal ini";}else{echo $hasil['pembahasan']; } ?></td>
+                                <td class="text-center"><?php echo $hasil['pilihana']; ?></td>
+                                <td class="text-center"><?php echo $hasil['pilihanb']; ?></td>
+                                <td class="text-center"><?php echo $hasil['pilihanc']; ?></td>
+                                <td class="text-center"><?php echo $hasil['pilihand']; ?></td>
+                                <td class="text-center"><?php echo $hasil['pilihane']; ?></td>
                                 <td width="150" class="text-center"><?php echo $hasil['pilihanbenar']; ?></td>
+                                <td width="300" class=""><?php if($hasil['pembahasan']==''){echo "Tidak ada pembahasan untuk soal ini";}else{echo $hasil['pembahasan']; } ?></td>
                                 <!--<td class="text-center"></td>-->
                                 <?php if($_SESSION['status']=='admin'){?>
                                     <td class="text-center">
